@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Old Bicycle</string>
+    <string name="bicycle_name">Nama Sepeda</string>
+    <string name="country">Negara Pembuat:</string>
+    <string name="detail">Detail</string>
+    <string name="grid">Galeri Foto</string>
+    <string name="profile">Profil</string>
+    <string name="list">List</string>
+    <string name="name">Nama</string>
+    <string name="nama">Wiedy Tira Pratama</string>
+    <string name="email">wiedytp5@gmail.com</string>
+</resources>
