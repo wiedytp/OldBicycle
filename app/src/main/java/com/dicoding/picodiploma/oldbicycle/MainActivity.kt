@@ -1,18 +1,18 @@
 package com.dicoding.picodiploma.oldbicycle
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var rvBicycle: RecyclerView
-    private lateinit var listBicycleAdapter: ListBicycleAdapter
+// private lateinit var rvBicycle: RecyclerView
     private var list: ArrayList<Bicycle> = arrayListOf()
+    private lateinit var listBicycleAdapter: ListBicycleAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,12 +25,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun showRecyclerList() {
 
-        rvBicycle.layoutManager = LinearLayoutManager(this)
+//        rv_bicycle.layoutManager = LinearLayoutManager(this)
         list.addAll(BicycleData.listData)
-        val listBicycleAdapter = ListBicycleAdapter(list)
-        rvBicycle.apply {
+        listBicycleAdapter = ListBicycleAdapter(list)
+
+        rv_bicycle.apply {
             layoutManager = LinearLayoutManager(this@MainActivity)
-            rvBicycle.adapter = listBicycleAdapter
+           adapter = listBicycleAdapter
             setHasFixedSize(true)
         }
     }
@@ -47,13 +48,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setListClickAction() {
-            ListBicycleAdapter.setOnItemClickCallback(object : ListBicycleAdapter.OnItemClickCallback {
+            listBicycleAdapter.setOnItemClickCallback(object : ListBicycleAdapter.OnItemClickCallback {
                 override fun onItemClick(data: Bicycle) {
                     val BicycleDetailed = Intent(this@MainActivity, BicycleDetailed::class.java)
                         .apply {
                             putExtra(BicycleDetailed.EXTRA_NAME, data.name)
                             putExtra(BicycleDetailed.EXTRA_DETAILED, data.detail)
-                            putExtra(BicycleDetailed.EXTRA_IMAGE_URL, data.photo)
+//                            putExtra(BicycleDetailed.EXTRA_IMAGE_URL, data.photo)
                         }
                     startActivity(BicycleDetailed)
                 }
@@ -61,9 +62,9 @@ class MainActivity : AppCompatActivity() {
         }
 
     private fun showRecyclerGrid() {
-        rvBicycle.layoutManager = GridLayoutManager(this, 1)
+        rv_bicycle.layoutManager = GridLayoutManager(this, 1)
         val gridBicycleAdapter = GridBicycleAdapter(list)
-        rvBicycle.adapter = gridBicycleAdapter
+        rv_bicycle.adapter = gridBicycleAdapter
     }
 
     private fun setMode(selectedMode: Int) {
