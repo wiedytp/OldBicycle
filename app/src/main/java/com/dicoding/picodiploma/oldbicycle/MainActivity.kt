@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
                         .apply {
                             putExtra(BicycleDetailed.EXTRA_NAME, data.name)
                             putExtra(BicycleDetailed.EXTRA_DETAILED, data.detail)
-//                            putExtra(BicycleDetailed.EXTRA_IMAGE_URL, data.photo)
+                            putExtra(BicycleDetailed.EXTRA_PHOTO, data.photo)
                         }
                     startActivity(BicycleDetailed)
                 }
