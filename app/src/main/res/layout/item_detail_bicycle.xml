@@ -1,46 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-   android:orientation="horizontal"
-    android:background="@color/colorPrimaryDark">
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:gravity="center">
 
-    <TextView
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="80dp"
-        android:id="@+id/tv_item_name"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/bicycle_name"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:textColor="#fff"/>
-
-    <ImageView
-        android:id="@id/img_item_photo"
-        android:layout_width="392dp"
-        android:layout_height="289dp"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="100dp"
-        android:cropToPadding="true"
-        tools:src="@android:color/darker_gray"/>
-
-    <TextView
-        android:layout_marginBottom="100dp"
-        android:id="@+id/tv_item_detail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/detail"
-        android:textColor="#fff"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:layout_below="@id/img_item_photo"/>
+        android:layout_height="400dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        app:cardBackgroundColor="@color/colorPrimary"
+        android:layout_margin="10dp">
 
 
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="5dp"
+            android:orientation="vertical">
+
+            <ImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/img_item_photo"
+                android:layout_width="300dp"
+                android:layout_margin="5dp"
+                android:layout_gravity="center"
+                android:layout_height="200dp"
+                 tools:src="@color/colorPrimaryDark" />
+
+            <TextView
+                android:id="@+id/tv_item_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="Title"
+                android:textColor="@color/colorAccent"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:paddingLeft="10dp"
+                android:paddingTop="30dp"/>
+
+            <TextView
+                android:id="@+id/tv_item_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:textColor="@color/colorAccent"
+                android:textSize="10sp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"/>
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
 
 </RelativeLayout>

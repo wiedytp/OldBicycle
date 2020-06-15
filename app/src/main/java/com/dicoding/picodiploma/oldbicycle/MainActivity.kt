@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-// private lateinit var rvBicycle: RecyclerView
+//    private lateinit var rvBicycle: RecyclerView
     private var list: ArrayList<Bicycle> = arrayListOf()
     private lateinit var listBicycleAdapter: ListBicycleAdapter
 
@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun showRecyclerList() {
 
-//        rv_bicycle.layoutManager = LinearLayoutManager(this)
+      rv_bicycle.layoutManager = LinearLayoutManager(this)
         list.addAll(BicycleData.listData)
         listBicycleAdapter = ListBicycleAdapter(list)
 

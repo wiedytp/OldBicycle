@@ -19,7 +19,7 @@ class ListBicycleAdapter(val listBicycle: ArrayList<Bicycle>) :
     override fun onCreateViewHolder(
         viewGroup: ViewGroup,
         i: Int
-    ): ListBicycleAdapter.ListViewHolder {
+    ): ListViewHolder {
         val view: View = LayoutInflater.from(viewGroup.context)
             .inflate(R.layout.item_row_bicycle, viewGroup, false)
         return ListViewHolder(view)
@@ -29,12 +29,11 @@ class ListBicycleAdapter(val listBicycle: ArrayList<Bicycle>) :
         return listBicycle.size
     }
 
-    override fun onBindViewHolder(holder: ListBicycleAdapter.ListViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
 
         holder.bind(listBicycle[position])
-        holder.itemView.setOnClickListener() {
-            onItemClickCallback
-                .onItemClick(listBicycle[holder.adapterPosition])
+        holder.itemView.setOnClickListener {
+            onItemClickCallback.onItemClick(listBicycle[holder.adapterPosition])
         }
     }
 
