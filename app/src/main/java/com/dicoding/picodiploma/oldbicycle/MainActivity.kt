@@ -69,16 +69,16 @@ class MainActivity : AppCompatActivity() {
 
     private fun setMode(selectedMode: Int) {
         when (selectedMode) {
-            R.id.action_grid -> {
-                showRecyclerGrid()
-            }
+//            R.id.action_grid -> {
+//                showRecyclerGrid()
+//            }
             R.id.action_profile -> {
                 val moveIntent = Intent(this@MainActivity, Profile::class.java)
                 startActivity(moveIntent)
             }
-            R.id.action_list -> {
-                showRecyclerList()
-            }
+//            R.id.action_list -> {
+//                showRecyclerList()
+//            }
         }
     }
 }
