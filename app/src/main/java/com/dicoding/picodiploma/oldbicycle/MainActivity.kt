@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -61,11 +60,11 @@ class MainActivity : AppCompatActivity() {
             })
         }
 
-    private fun showRecyclerGrid() {
-        rv_bicycle.layoutManager = GridLayoutManager(this, 1)
-        val gridBicycleAdapter = GridBicycleAdapter(list)
-        rv_bicycle.adapter = gridBicycleAdapter
-    }
+//    private fun showRecyclerGrid() {
+//        rv_bicycle.layoutManager = GridLayoutManager(this, 1)
+//        val gridBicycleAdapter = GridBicycleAdapter(list)
+//        rv_bicycle.adapter = gridBicycleAdapter
+//    }
 
     private fun setMode(selectedMode: Int) {
         when (selectedMode) {
@@ -76,9 +75,9 @@ class MainActivity : AppCompatActivity() {
                 val moveIntent = Intent(this@MainActivity, Profile::class.java)
                 startActivity(moveIntent)
             }
-//            R.id.action_list -> {
-//                showRecyclerList()
-//            }
+            R.id.action_list -> {
+                showRecyclerList()
+            }
         }
     }
 }
